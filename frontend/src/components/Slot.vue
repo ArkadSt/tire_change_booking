@@ -16,7 +16,7 @@ const bookSlot = () => {
 </script>
 
 <template>
-  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-6 space-y-4 flex flex-row items-center">
+  <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-4 space-y-2 flex flex-row items-center">
     <div class="flex-1">
       <h2 class="text-xl font-semibold text-gray-800">{{ slot.workshop.name }}</h2>
       <p class="text-gray-600">Address: {{ slot.workshop.address }}</p>
@@ -28,3 +28,7 @@ const bookSlot = () => {
     </div>
   </div>
 </template>
+
+<style scoped>
+
+</style>

@@ -8,7 +8,7 @@ def map_fields(data, mapping, reverse=False):
     """
     Maps fields based on configuration.
     - `reverse=True` : Map workshop's response fields to standard format.
-    - `reverse=False` (default): Map standard format back to workshop-specific fields.
+    - `reverse=False` (default): Map standard format to workshop-specific fields.
     """
     if reverse:
         # Reverse field mapping: Convert standard format to workshop's format

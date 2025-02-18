@@ -104,8 +104,8 @@ const applyFilters = ( async () => {
             </div>
             <div class="w-3/4">
                 <h1 class="text-2xl font-bold mb-4 text-center">Available slots</h1>
-                <ul class="slots grid grid-cols-1 gap-4">
-                    <li class="post p-4 rounded" v-for="slot in store.slots.value" :key="slot.workshop.id + slot.id">
+                <ul class="grid grid-cols-1 gap-4">
+                    <li class="rounded" v-for="slot in store.slots.value" :key="slot.workshop.id + slot.id">
                         <Slot :slot="slot" />
                     </li>
                 </ul>

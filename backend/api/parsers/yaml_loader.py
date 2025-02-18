@@ -10,7 +10,4 @@ def load_workshops():
 
     return config["workshops"]
 
-# Example usage:
-# workshops = load_workshops()
-# print(workshops)
 
