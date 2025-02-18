@@ -1,0 +1,56 @@
+workshops:
+  manchester_tires:
+    name: "Manchester Tires"
+    address: "14 Bury New Rd, Manchester"
+    base_url: "http://localhost:9004/api/v2"
+    request_format: "json"
+    vehicle_types: ["car", "truck"]
+    endpoints:
+      available_slots:
+        endpoint: "/tire-change-times"
+        method: "GET"
+      book_appointment:
+        endpoint: "/tire-change-times/{id}/booking"
+        method: "POST"
+
+    field_mappings:
+      contact_info: "contactInformation"
+      available: "available"
+      id: "id"
+      time: "time"
+      status_code: "code"
+      error: "message"
+
+    param_mappings:
+      available_slots:
+        from: "from"
+        until: ""
+
+  london_wheels:
+    name: "London Wheels"
+    address: "1A Gunton Rd, London"
+    base_url: "http://localhost:9003/api/v1"
+    request_format: "xml"
+    vehicle_types: ["car"]
+
+    xml_request_tag: "london.tireChangeBookingRequest"
+
+    endpoints:
+      available_slots:
+        endpoint: "/tire-change-times/available"
+        method: "GET"
+      book_appointment:
+        endpoint: "/tire-change-times/{id}/booking"
+        method: "PUT"
+
+    field_mappings:
+      contact_info: "contactInformation"
+      id: "uuid"
+      time: "time"
+      status_code: "statusCode"
+      error: "error"
+
+    param_mappings:
+      available_slots:
+        from: "from"
+        until: "until"
