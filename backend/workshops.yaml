@@ -1,6 +1,6 @@
 workshops:
   manchester_tires:
-    name: "Manchester Tires"
+    name: "Manchester Tire Workshop"
     address: "14 Bury New Rd, Manchester"
     base_url: "http://localhost:9004/api/v2"
     request_format: "json"
@@ -26,8 +26,8 @@ workshops:
         from: "from"
         until: ""
 
-  london_wheels:
-    name: "London Wheels"
+  london_tires:
+    name: "London Tire Workshop"
     address: "1A Gunton Rd, London"
     base_url: "http://localhost:9003/api/v1"
     request_format: "xml"

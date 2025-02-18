@@ -43,7 +43,7 @@ class BaseAdapter(ABC):
         """
         Injects ID into booking url
         """
-        return self.base_url + self.endpoints["book_appointment"]["endpoint"].format(id=payload["booking_id"])
+        return self.base_url + self.endpoints["book_appointment"]["endpoint"].format(id=payload["id"])
 
     def get_available_slots_response(self, params):
         url = self.base_url + self.endpoints["available_slots"]["endpoint"]

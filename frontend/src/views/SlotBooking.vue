@@ -10,7 +10,7 @@ const props = defineProps({
   workshop: String
 });
 const slot = ref(null);
-const host = "http://localhost:8000";
+//const host = "http://localhost:8000";
 const name = ref('');
 const email = ref('');
 const phone = ref('');
@@ -31,14 +31,14 @@ onBeforeMount(()=>{
 const confirmBooking = async () => {
   try {
     const contactInfo = `Name: ${name.value}, Email: ${email.value}, Phone: ${phone.value}`;
-    const response = await fetch(`${host}/api/book/`, {
+    const response = await fetch(`${store.host}/api/book/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         workshop: slot.value.workshop.id,
-        booking_id: slot.value.id,
+        id: slot.value.id,
         contact_info: contactInfo,
       }),
     });
@@ -73,22 +73,22 @@ const confirmBooking = async () => {
       <p class="text-gray-600">Time: {{ new Date(slot.time).toLocaleString('et-EE') }}</p>
       <p class="text-gray-600">Supported Vehicles: {{ slot.workshop.vehicle_types.join(', ') }}</p>
     </div>
-    <div class="space-y-4 mt-4">
+    <form @submit.prevent="confirmBooking" class="space-y-4 mt-4">
       <h3 class="text-xl font-semibold text-gray-800">Contact Information</h3>
       <div>
         <label for="name" class="block text-gray-700">Name</label>
-        <input id="name" v-model="name" type="text" class="mt-1 block w-full p-2 border rounded" />
+        <input id="name" v-model="name" type="text" class="mt-1 block w-full p-2 border rounded" required/>
       </div>
       <div>
         <label for="email" class="block text-gray-700">Email</label>
-        <input id="email" v-model="email" type="email" class="mt-1 block w-full p-2 border rounded" />
+        <input id="email" v-model="email" type="email" class="mt-1 block w-full p-2 border rounded" required/>
       </div>
       <div>
         <label for="phone" class="block text-gray-700">Phone</label>
-        <input id="phone" v-model="phone" type="tel" class="mt-1 block w-full p-2 border rounded" />
+        <input id="phone" v-model="phone" type="tel" class="mt-1 block w-full p-2 border rounded" required/>
       </div>
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="confirmBooking">Confirm Booking</button>
-    </div>
+      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >Confirm Booking</button>
+    </form>
     <div v-if="message" class="mt-4 text-green-600">{{ message }}</div>
     <div v-if="errorMessage" class="mt-4 text-red-600">{{ errorMessage }}</div>
   </div>

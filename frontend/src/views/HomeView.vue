@@ -7,7 +7,7 @@ import { useSlotStore } from '@/store/slots';
 
 const store = useSlotStore();
 
-const host = "http://localhost:8000"
+//const host = "http://localhost:8000"
 const workshops = ref([])
 const checked_workshops = computed(() => workshops.value.filter(workshop => workshop.selected))
 const available_vehicle_types = ref([])
@@ -26,7 +26,7 @@ future_date.setFullYear(future_date.getFullYear()+1)
 const date_until = ref(future_date.toISOString())
 
 const fetchWorkshops = async () => {
-	await fetch(`${host}/api/workshops`)
+	await fetch(`${store.host}/api/workshops`)
         .then((response) => response.json())
         .then((data) => (workshops.value = data))
         .catch((err) => console.log(err.message));
@@ -42,7 +42,7 @@ const fetchWorkshops = async () => {
 }
 
 const fetchSlots = async (workshop) => {
-    await fetch(`${host}/api/times/?workshop=${workshop}&from=${extractDate(date_from.value)}&until=${extractDate(date_until.value)}`)
+    await fetch(`${store.host}/api/times/?workshop=${workshop}&from=${extractDate(date_from.value)}&until=${extractDate(date_until.value)}`)
         .then((response) => response.json())
         .then((data) => store.slots.value.push(...data))
         .catch((err) => console.log(err.message));

@@ -28,9 +28,9 @@ def handle_workshop_errors(view_func):
             return Response({"error": "'workshop' parameter expected"}, status=status.HTTP_400_BAD_REQUEST)
         try:
             config = CONFIG[workshop]
-            return view_func(request, workshop, config, *args, **kwargs)
         except KeyError as e:
             return Response({"error": "no workshop {} defined".format(str(e))}, status=status.HTTP_400_BAD_REQUEST)
+        return view_func(request, workshop, config, *args, **kwargs)
 
     return _wrapped_view
 
@@ -42,4 +42,6 @@ def get_tire_change_times(request, workshop_id, config):
 @api_view(['POST'])
 @handle_workshop_errors
 def book_tire_change_time(request, workshop_id, config):
+    if not 'id' in request.data:
+        return Response({"error": "'id' parameter expected"}, status=status.HTTP_400_BAD_REQUEST)
     return adapter_factory.create_adapter(workshop_id, config).book_appointment(request.data)
