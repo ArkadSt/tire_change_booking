@@ -10,7 +10,7 @@ These are the steps to start the backend and frontend in non-production mode:
 ```bash
 cd backend
 pip install -r requirements.txt
-python3 manage.py runserver
+python manage.py runserver
 ```
 
 ### Frontend:
