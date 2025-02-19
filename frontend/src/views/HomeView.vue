@@ -79,10 +79,10 @@ const applyFilters = ( async () => {
                     <h2 class="text-xl font-semibold mb-2">Filters:</h2>
                     <h3 class="text-lg font-medium mb-1">Time range</h3>
                     <label for="from" class="block mb-1">From:</label>
-                    <VueDatePicker id="from" v-model="date_from" format="dd/MM/yyyy" class="mb-2 p-2 rounded w-full" :enable-time-picker="false" utc="preserve" />
+                    <VueDatePicker id="from" v-model="date_from" format="dd/MM/yyyy" class="mb-2 p-2 rounded w-full" :enable-time-picker="false" :clearable="false" utc="preserve" />
 
                     <label for="until" class="block mb-1">Until:</label>
-                    <VueDatePicker id="until" v-model="date_until" format="dd/MM/yyyy" class="mb-4 p-2 rounded w-full" :enable-time-picker="false" utc="preserve" />
+                    <VueDatePicker id="until" v-model="date_until" format="dd/MM/yyyy" class="mb-4 p-2 rounded w-full" :enable-time-picker="false" :clearable="false" utc="preserve" />
 
                     <h3 class="text-lg font-medium mb-1">Workshops</h3>
                     <ul class="mb-4">
