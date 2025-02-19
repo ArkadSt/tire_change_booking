@@ -20,6 +20,8 @@ npm install
 npm run dev
 ```
 
-For running tests, please use the following [config file](https://raw.githubusercontent.com/ArkadSt/tire_change_booking/refs/heads/main/backend/workshops.yaml) and make sure that [workshops](https://github.com/Surmus/tire-change-workshop) are running.
-
+For running tests, please use the following [config file](https://raw.githubusercontent.com/ArkadSt/tire_change_booking/refs/heads/main/backend/workshops.yaml) and make sure that [workshops](https://github.com/Surmus/tire-change-workshop) are running. Then go to the `backend` folder and run:
+```bash
+python3 manage.py test
+```
 
