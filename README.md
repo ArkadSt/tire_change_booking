@@ -1,24 +1,25 @@
 # Tire Change Booking
-The backend is build using **Django** and frontend using **Vue.js**.
 
-By default, frontend expects backend to run on **localhost**, port **8000**. This can be changed by editing `/frontend/src/store/slots.js`
+The backend is built using **Django** and the frontend using **Vue.js**.
 
-These are the steps to start backend and frontend in non-production mode.
+By default, the frontend expects the backend to run on **localhost**, port **8000**. This can be changed by editing `/frontend/src/store/slots.js`.
 
-Backend:
-```
+These are the steps to start the backend and frontend in non-production mode:
+
+### Backend:
+```bash
 cd backend
 pip install -r requirements.txt
 python3 manage.py runserver
 ```
 
-Frontend:
-```
+### Frontend:
+```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-For running tests please use the following [config file](https://raw.githubusercontent.com/ArkadSt/tire_change_booking/refs/heads/main/backend/workshops.yaml) and make sure that [workshops](https://github.com/Surmus/tire-change-workshop) are running.
+For running tests, please use the following [config file](https://raw.githubusercontent.com/ArkadSt/tire_change_booking/refs/heads/main/backend/workshops.yaml) and make sure that [workshops](https://github.com/Surmus/tire-change-workshop) are running.
 
 
