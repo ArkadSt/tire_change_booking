@@ -1,7 +1,8 @@
 # Tire Change Booking
 
-![Main page](https://imgur.com/a/eV4Jp3H)
-![Booking page](https://imgur.com/a/41wU7ML)
+
+<img src="https://gooserave.eu/media/tire_change_booking/main_page.png" alt="main page" width="600">
+<img src="https://gooserave.eu/media/tire_change_booking/booking_page.png" alt="booking page" width="600">
 
 The backend is built using **Django** and the frontend using **Vue.js**.
 
