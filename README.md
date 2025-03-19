@@ -1,5 +1,8 @@
 # Tire Change Booking
 
+![Main page](https://imgur.com/a/eV4Jp3H)
+![Booking page](https://imgur.com/a/41wU7ML)
+
 The backend is built using **Django** and the frontend using **Vue.js**.
 
 By default, the frontend expects the backend to run on **localhost**, port **8000**. This can be changed by editing `/frontend/src/store/slots.js`.
