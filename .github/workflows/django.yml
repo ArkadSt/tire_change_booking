@@ -18,7 +18,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Build the Docker image
+    - name: Run Workshops
       run: |
         docker run -d -p 9003:80 surmus/london-tire-workshop:2.0.1
         docker run -d -p 9004:80 surmus/manchester-tire-workshop:2.0.1
